@@ -1,0 +1,6 @@
+CREATE TABLE history(
+id INTEGER PRIMARY KEY,
+type TEXT,
+input TEXT,
+result TEXT
+);

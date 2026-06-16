@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/email_analyzer.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="email-page">
+
+    <div class="page-header">
+
+        <h1>
+            <i class="fas fa-envelope"></i>
+            Email Analyzer
+        </h1>
+
+        <p>
+            Analyze email content and detect phishing attempts.
+        </p>
+
+    </div>
+
+    <div class="email-layout">
+
+        <!-- LEFT SIDE -->
+
+        <div class="email-input-card">
+
+            <h3>Email Input</h3>
+
+            <textarea
+                id="emailInput"
+                placeholder="Paste suspicious email here..."
+            ></textarea>
+
+            <div class="upload-box">
+
+                Upload Email (.eml, .msg)
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="btn-primary">
+                    Analyze Email
+                </button>
+
+                <button class="btn-secondary">
+                    Clear
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="result-panel">
+
+            <div class="risk-card">
+
+                <h2>High Risk</h2>
+
+                <div class="risk-score">
+                    85
+                </div>
+
+            </div>
+
+            <div class="threat-list">
+
+                <div class="threat-item high">
+                    Suspicious Sender Address
+                </div>
+
+                <div class="threat-item high">
+                    Suspicious Link
+                </div>
+
+                <div class="threat-item medium">
+                    Urgent Language
+                </div>
+
+                <div class="threat-item low">
+                    SPF Record Missing
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
